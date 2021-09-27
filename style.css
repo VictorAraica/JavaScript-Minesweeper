@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#menu {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#dificultades {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#dificultades li {
+    margin: 0.5em;
+}
+
+.dificultad, #jugar {
+    background: rgb(220,220,220);
+    color: rgb(75,75,75);
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 0.5em;
+    border: none;
+    border-bottom: 3px solid rgb(75,75,75);
+    border-radius: 15px;
+    min-width: 230px;
+    cursor: pointer;
+    outline: none;
+}
+
+#reiniciar-btn:active, .seleccionado, #jugar:active {
+    color: white;
+    border-bottom: 3px solid rgba(75,75,75,0);
+    background: rgb(50,50,50);
+}
+
+#reiniciar-btn {
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    top: 1.5em;
+}
+
+
+#menu-personalizado {
+    margin: 0em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(2000px, 0);
+    transition: all 1s;
+}
+
+#menu-personalizado input {
+    outline: none;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+    text-align: center;
+}
+
+.opcion h2 {
+    margin: 0;
+}
+
+.opcion input {
+    max-width: 40px;
+    margin: 0 1em;
+    padding: 0.3em;
+    text-align: center;
+    font-size: 1em;
+
+    border: none;
+    border: 1px solid rgb(0,0,0);
+    border-radius: 10px;
+}
+
+.opcion input:out-of-range {
+    box-shadow: none;
+    border-color: red;
+}
+
+#jugar {
+    margin-top: 2.5em;
+}
+
+
+
+/* buscaminas */
+#buscaminas {
+    display: none;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.celda {
+    background: rgb(200,200,200);
+    border-top: 5px solid rgb(230,230,230);
+    border-left: 5px solid rgb(230,230,230);
+    border-bottom: 5px solid rgb(120,120,120);
+    border-right: 5px solid rgb(120,120,120);
+}
+
+.visitada {
+    background: rgb(185,185,185);
+    border: 1px solid rgb(140,140,140) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+}
+
+.marcada {
+    background-color: red;
+}
+
+.bomba {
+    background-color: black;
+}
+
+#cuentaMinas {
+    align-self: center;
+    justify-self: center;
+}
+
+#cuentaMinas h1{
+    margin: 0;
+}
+
+#back-btn {
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    color: rgb(100,100,100);
+    margin: 0.5em;
+    cursor: pointer;
+    display: none;
+}

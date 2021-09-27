@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div id="menu">
+        <ul id="dificultades">
+            <li><button id="principiante"
+                    class="dificultad">Principiante</button></li>
+            <li><button id="intermedio"
+                    class="dificultad seleccionado">Intermedio</button></li>
+            <li><button id="experto" class="dificultad">Experto</button></li>
+            <li><button id="personalizado"
+                    class="dificultad">Personalizado</button></li>
+        </ul>
+
+
+
+        <div id="menu-personalizado">
+            <div class="opcion" id="tamaño">
+                <h2>Tamaño (5-40): </h2>
+                <input id="alto-entry" type="number" min="5" max="40">
+                <h2>x</h2>
+                <input id="ancho-entry" type="number" min="5" max="40">
+            </div>
+
+            <div class="opcion">
+                <h2>Nro de minas: </h2>
+                <input id="minas-entry" type="number">
+            </div>
+        </div>
+
+        <button id="jugar">Jugar</button>
+
+    </div>
+
+    <div id="buscaminas">
+    </div>
+    <span class="material-icons" id="back-btn">
+        arrow_back
+    </span>
+
+    <script src="celda.js"></script>
+    <script src="buscaminas.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+
+</html>
