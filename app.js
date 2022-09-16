@@ -1,7 +1,7 @@
 // Elements
 const menu = document.getElementById("menu");
 const dificultadesUl = document.getElementById("dificultades");
-const dificultades = document.getElementsByClassName("dificultad");
+const dificultades = document.querySelectorAll(".dificultad");
 const menuPersonalizado = document.getElementById("menu-personalizado");
 const buscaminas = document.getElementById("buscaminas");
 const jugarBtn = document.getElementById("jugar");
