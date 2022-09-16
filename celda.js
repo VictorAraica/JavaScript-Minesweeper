@@ -32,14 +32,15 @@ class Celda {
             // marcar como visitada
             this.visitada = true;
             this.elemento.className = "visitada";
+
             // si tiene minas al rededor dibujar el numero y cambiar el color del numero
             if (this.minasVecinas > 0) {
                 this.dibujarNumero();
                 // si no tiene minas al rededor usamos recursion para visitar las casillas de alrededor
             } else {
                 this.visitarAlrededor();
-
             }
+
             // si no es mina actualizar cuenta de banderas
             this.juego.updateNroMinas();
             // si es mina terminamos la partida y le cambiamos la clase a la celda a bomba
@@ -51,6 +52,7 @@ class Celda {
     dibujarNumero() {
         this.elemento.innerHTML = `${this.minasVecinas}`;
         this.elemento.style.fontSize = `${this.juego.getFontSize()}px`;
+
         if (this.minasVecinas == 1) {
             this.elemento.style.color = "blue";
         } else if (this.minasVecinas == 2) {
@@ -85,9 +87,8 @@ class Celda {
     }
 
     rightClick() {
-        if (this.juego.gameOver) {
-            return false
-        } else if (!this.marcada && !this.visitada) {
+        if (this.juego.gameOver) return false;
+        else if (!this.marcada && !this.visitada) {
             this.elemento.className += " marcada";
             this.marcada = true;
             this.juego.banderas += 1;
@@ -96,6 +97,7 @@ class Celda {
             this.marcada = false;
             this.juego.banderas -= 1;
         }
+
         this.juego.updateNroMinas();
         return true;
     }
@@ -108,5 +110,4 @@ class Celda {
     dibujarBomba() {
         this.elemento.className += " bomba";
     }
-
 }

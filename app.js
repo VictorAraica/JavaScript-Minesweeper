@@ -89,6 +89,3 @@ backBtn.addEventListener("click", (e) => {
     backBtn.style.display = "none";
     buscaminas.innerHTML = '';
 });
-
-
-

@@ -15,8 +15,6 @@ class Buscaminas {
         document.getElementById("buscaminas").appendChild(this.cuentaMinas);
         this.updateNroMinas();
 
-
-
         for (let y = 0; y < this.alto; y++) {
             this.tablero.push([]);
             for (let x = 0; x < this.ancho; x++) {
@@ -41,14 +39,11 @@ class Buscaminas {
             }
         }
 
-
-
         this.setCellSize();
 
         window.addEventListener("resize", (e) => {
             this.setCellSize();
         });
-
 
         this.reiniciar = document.createElement("BUTTON");
         this.reiniciar.id = "reiniciar-btn";
@@ -58,7 +53,6 @@ class Buscaminas {
         document.getElementById("buscaminas").appendChild(this.reiniciar);
 
         this.reiniciar.addEventListener("click", (e) => this.reset());
-
     }
 
     reset() {
@@ -97,7 +91,6 @@ class Buscaminas {
         }
     }
 
-
     contarMinas(x, y) {
         let cuenta = 0;
         for (let yOffset = -1; yOffset < 2; yOffset++) {
@@ -112,7 +105,6 @@ class Buscaminas {
         this.tablero[y][x].minasVecinas = cuenta;
     }
 
-
     getOptimalSize() {
         let espacioX = window.innerWidth * 0.9;
         let espacioY = window.innerHeight * 0.7;
@@ -122,7 +114,6 @@ class Buscaminas {
 
         return Math.min(anchoIdeal, altoIdeal)
     }
-
 
     setCellSize() {
         this.size = this.getOptimalSize();
@@ -147,7 +138,6 @@ class Buscaminas {
         this.size = this.getOptimalSize();
         return this.size * 0.7;
     }
-    
 
     updateNroMinas() {
         this.cuentaMinas.innerHTML = `<h1>${this.nroMinas - this.banderas}</h1>`
@@ -159,7 +149,6 @@ class Buscaminas {
         this.dibujarBombas();
     }
 
-
     dibujarBombas() {
         for (let y = 0; y < this.alto; y++) {
             for (let x = 0; x < this.ancho; x++) {
@@ -169,5 +158,4 @@ class Buscaminas {
             }
         }
     }
-
 }
