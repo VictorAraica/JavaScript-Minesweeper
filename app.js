@@ -43,7 +43,8 @@ dificultades[dificultades.length - 1].addEventListener("click", (e) => {
 });
 //// agregar el listener el boton de jugar
 jugarBtn.addEventListener("click", (e) => {
-    let seleccionado = document.getElementsByClassName("seleccionado")[0];
+    const seleccionado = document.getElementsByClassName("seleccionado")[0];
+
     let ancho;
     let alto;
     let minas;
@@ -61,14 +62,13 @@ jugarBtn.addEventListener("click", (e) => {
         alto = 16;
         minas = 99;
     } else {
-        let altoEntry = document.getElementById("alto-entry");
-        let anchoEntry = document.getElementById("ancho-entry");
-        let minasEntry = document.getElementById("minas-entry");
+        const altoEntry = document.getElementById("alto-entry");
+        const anchoEntry = document.getElementById("ancho-entry");
+        const minasEntry = document.getElementById("minas-entry");
 
         alto = parseInt(altoEntry.value);
         ancho = parseInt(anchoEntry.value);
         minas = parseInt(minasEntry.value);
-
 
         if (!(5 < alto) ||
             !(alto <= 40) ||
@@ -77,11 +77,9 @@ jugarBtn.addEventListener("click", (e) => {
             !(1 < minas) ||
             !(minas < ancho * alto)
         ) {
-            if (!(1 < minas) || !(minas < ancho * alto)) {
-                minasEntry.style.borderColor = "red";
-            } else {
-                minasEntry.style.borderColor = "black";
-            }
+            if (!(1 < minas) || !(minas < ancho * alto)) minasEntry.style.borderColor = "red";
+            else minasEntry.style.borderColor = "black";
+
             return false;
         }
     }
